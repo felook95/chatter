@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import MessageInputField from './MessageInputField';
 import Messages from './Messages';
 import { joinToConversation, sendMessage } from './api-conversation';
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import Grid from '@mui/material/Grid2';
 import { Box } from '@mui/material';
 import Message from './Message';
 
 const Chat = () => {
-  const { conversationId } = useParams() as {conversationId: string};
+  const { conversationId } = useParams() as { conversationId: string };
 
   useEffect(() => {
     joinToConversation(conversationId, '1');
@@ -20,7 +20,7 @@ const Chat = () => {
 
   return (
     <Grid container marginX={1} height={'100%'} direction={'column'}>
-      <Grid sx={{ flex: 1, display: 'flex', overflowY: 'auto' }} xs={12}>
+      <Grid size={{ xs: 12 }} sx={{ flex: 1, display: 'flex', overflowY: 'auto' }}>
         <Messages conversationId={conversationId} />
       </Grid>
       <Grid>
