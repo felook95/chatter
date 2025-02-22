@@ -15,7 +15,6 @@ public class OrderedTimeProvider implements TimeProvider {
 
     @Override
     public LocalDateTime now() {
-        LocalDateTime next = returnDateTimes.next();
-        return next;
+        return returnDateTimes.next();
     }
 }

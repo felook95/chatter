@@ -11,17 +11,17 @@ const Chat = () => {
   const { conversationId } = useParams();
 
   useEffect(() => {
-    joinToConversation(conversationId!, '1');
+    joinToConversation(conversationId, '1');
   }, [conversationId]);
 
   const handleSendMessage = (messageToSend: Message) => {
-    sendMessage(conversationId!, messageToSend);
+    sendMessage(conversationId, messageToSend);
   };
 
   return (
     <Grid container marginX={1} height={'100%'} direction={'column'}>
       <Grid sx={{ flex: 1, display: 'flex', overflowY: 'auto' }} xs={12}>
-        <Messages conversationId={conversationId!} />
+        <Messages conversationId={conversationId} />
       </Grid>
       <Grid>
         <Box mb={1}>

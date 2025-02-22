@@ -1,6 +1,5 @@
 package hu.martin.chatter.domain.conversation;
 
-import hu.martin.chatter.domain.conversation.Conversation;
 import hu.martin.chatter.domain.message.MessageId;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

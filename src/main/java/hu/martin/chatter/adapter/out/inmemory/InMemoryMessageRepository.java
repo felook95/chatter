@@ -50,8 +50,7 @@ public class InMemoryMessageRepository implements MessageRepository {
         int toIndex = pageProperties.pageSize();
 
         LinkedList<Message> messagesList = new LinkedList<>(messages.values());
-        Collections.reverse(messagesList);
-        Stream<Message> pagedMessagesStream = messagesList.stream()
+        Stream<Message> pagedMessagesStream = messagesList.reversed().stream()
                 .filter(messageIdMessageEntry -> messageIdsToLookFor.contains(messageIdMessageEntry.id()))
                 .skip(fromIndex).limit(toIndex);
         return Flux.fromStream(pagedMessagesStream);
