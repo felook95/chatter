@@ -1,7 +1,6 @@
-import { Box } from '@mui/material';
 import React from 'react';
+import { Box } from '@mui/material';
 import { Navigate } from 'react-router-dom';
-import Home from '../core/Home';
 import { useAuth } from 'react-oidc-context';
 
 const AuthRedirect = () => {
