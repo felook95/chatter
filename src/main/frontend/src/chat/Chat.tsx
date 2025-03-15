@@ -6,6 +6,7 @@ import { joinToConversation, sendMessage } from './api-conversation';
 import Grid from '@mui/material/Grid2';
 import { Box } from '@mui/material';
 import Message from './Message';
+import Menu from '../core/Menu';
 
 const Chat = () => {
   const { conversationId } = useParams() as { conversationId: string };
@@ -19,16 +20,22 @@ const Chat = () => {
   };
 
   return (
-    <Grid container marginX={1} height={'100%'} direction={'column'}>
-      <Grid size={{ xs: 12 }} sx={{ flex: 1, display: 'flex', overflowY: 'auto' }}>
-        <Messages conversationId={conversationId} />
+    <>
+      <Menu />
+      <Grid container marginX={1} height={'100%'} direction={'column'}>
+        <Grid
+          size={{ xs: 12 }}
+          sx={{ flex: 1, display: 'flex', overflowY: 'auto' }}
+        >
+          <Messages conversationId={conversationId} />
+        </Grid>
+        <Grid>
+          <Box mb={1}>
+            <MessageInputField onSendMessage={handleSendMessage} />
+          </Box>
+        </Grid>
       </Grid>
-      <Grid>
-        <Box mb={1}>
-          <MessageInputField onSendMessage={handleSendMessage} />
-        </Box>
-      </Grid>
-    </Grid>
+    </>
   );
 };
 
